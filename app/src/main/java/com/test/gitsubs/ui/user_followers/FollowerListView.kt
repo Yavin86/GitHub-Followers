@@ -48,7 +48,6 @@ class FollowerListView : Fragment() {
         FollowerListViewArgs.fromBundle(requireArguments()).userNickName
 
     private fun setUserData(user: UserDomainModel) {
-        // TODO user.name can be null and on this layer it will be empty
         binding.toolbarTitle.title = user.name
         binding.toolbarTitle.invalidate()
 

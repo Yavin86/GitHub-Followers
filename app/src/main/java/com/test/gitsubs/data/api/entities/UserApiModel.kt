@@ -6,7 +6,6 @@ import com.squareup.moshi.Json
 /**
  * This is API model. It should be used only in request context
  */
-// TODO mark it internal or smth. Then rename it
 data class UserApiModel(
     @Json(name = "login")
     val login: String,

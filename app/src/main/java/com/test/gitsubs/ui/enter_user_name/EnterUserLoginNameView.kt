@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.gitsubs.GitApp
+import com.test.gitsubs.R
 import com.test.gitsubs.data.GitRepository
 import com.test.gitsubs.databinding.FragmentEnterLoginNameBinding
 import com.test.gitsubs.ui.user_followers.FollowerListViewDirections
@@ -29,7 +30,7 @@ class EnterUserLoginNameView : Fragment() {
     }
 
     private fun initUI() {
-//        binding.etUserName.setText(getString(R.string.startUserNickName)) // TODO remove it then
+        binding.etUserName.setText(getString(R.string.startUserNickName))
 
         binding.btnSearch.setOnClickListener {
             val nickName = binding.etUserName.text.toString()

@@ -21,18 +21,17 @@ class GitUserRepository(
     private val daoSource: GitDaoSource
 ) : GitRepository {
 
-    // TODO Strategy 2: is user in DB already and if it IS full
-    override suspend fun getUser(userNickName: String): Data<UserDomainModel> {
-        val cashedUser = daoSource.getUser(userNickName)
-        return if (cashedUser == null) {
-            val dataResult = apiSrc.getUser(userNickName)
+     override suspend fun getUser(userNickName: String): Data<UserDomainModel> {
+         val cashedUser = daoSource.getUser(userNickName)
+         return if (cashedUser == null) {
+             val dataResult = apiSrc.getUser(userNickName)
 
-            val user = dataResult.data?.toDomainModel
-            if (user != null) {
-                daoSource.insertOrUpdate(user.toDaoModel)
-            }
+             val user = dataResult.data?.toDomainModel
+             if (user != null) {
+                 daoSource.insertOrUpdate(user.toDaoModel)
+             }
 
-            Data.success(user)
+             Data.success(user)
         } else {
             Data.success(cashedUser.toDomainModel)
         }
