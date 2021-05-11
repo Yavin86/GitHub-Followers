@@ -12,7 +12,7 @@
     <string name="find_details">Find details</string>
 
     <string name="user_nick_name_prefix">nickname: %s</string>
-    <string name="user_stats_prefix">stats: %s / %s</string>
+    <string name="user_stats_prefix">followers %s / following %s</string>
 
     <!--Errors-->
     <string name="error_data_load">Failed to load data</string>
