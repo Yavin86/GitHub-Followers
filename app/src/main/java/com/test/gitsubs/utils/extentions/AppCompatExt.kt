@@ -14,7 +14,7 @@ fun <T : ViewModel> Fragment.obtainViewModel(
 inline fun <T> viewModelFactory(crossinline create: () -> T): ViewModelProvider.Factory {
     return object : ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return create() as T
         }
     }
